@@ -1,0 +1,13 @@
+def calcular_salario_liquido(salario_bruto, faltas, inss):
+    desconto_inss = salario_bruto * (inss / 100)
+    desconto_faltas = (salario_bruto / 30) * faltas
+    salario_liquido = salario_bruto - desconto_inss - desconto_faltas
+    return salario_liquido
+
+if __name__ == "__main__":
+    salario_bruto = float(input("Digite o salário bruto: "))
+    faltas = int(input("Digite o número de faltas: "))
+    inss = float(input("Digite o percentual do INSS: "))
+
+    salario_liquido = calcular_salario_liquido(salario_bruto, faltas, inss)
+    print(f"Salário líquido: R$ {salario_liquido:.2f}")
